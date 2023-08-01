@@ -1,0 +1,102 @@
+@import "../../styles/mixin";
+@import "../../styles/vars";
+
+.teachers {
+  padding-bottom: 120px;
+
+  .container {
+    @include flexRule(space-between, center);
+    gap: 100px;
+
+    @include _991-block {
+      @include flexRule(space-between, center, column-reverse);
+      gap: 50px;
+    }
+  }
+
+  @include _575-block {
+    padding-bottom: 80px;
+  }
+
+  // .teachers__content
+
+  &__content {
+    width: 45%;
+
+    @include _991-block {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  // .teachers__title
+
+  &__title {
+    font-size: $allTitleFontSize;
+    color: $textColor;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.2;
+
+    @include _767(font-size, $allTabletFontSize);
+    @include _575(font-size, $allMobileFontSize);
+  }
+
+  // .teachers__text
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  // .teachers__btn
+
+  &__btn {
+    margin-top: 30px;
+    background: $mainColor;
+    @include _991-block{
+      margin: auto;
+    }
+  }
+
+  // .teachers__gallery
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+
+    @include _991-block {
+      width: 100%;
+      justify-items: center;
+    }
+
+    @include _575-block {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // .teachers__gallery-item
+
+  &__gallery-item {
+    text-align: center;
+  }
+
+  // .teachers__img
+
+  &__img {
+    margin-bottom: 15px;
+  }
+
+  // .teachers__name
+
+  &__name {
+    font-weight: 500;
+  }
+
+  // .teachers__position
+
+  &__position {
+    line-height: 1.1;
+  }
+}

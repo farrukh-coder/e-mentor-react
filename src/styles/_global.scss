@@ -1,0 +1,82 @@
+.container {
+  width: 1170px;
+  margin: auto;
+
+  @include _1199-block {
+    width: 960px;
+  }
+
+  @include _991-block {
+    width: 750px;
+  }
+
+  @include _767-block {
+    width: 550px;
+  }
+
+  @include _575-block {
+    width: 95%;
+  }
+}
+
+body {
+  font-family: $mainFont;
+  color: $textColor;
+
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+// Animations
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.global-btn {
+  width: 230px;
+  height: 56px;
+  border-radius: 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $btnTextColor;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow:hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition:all .2s ease-in-out;
+  position: relative;
+  
+  &:before{
+    content:" ";
+    display:block;
+    width:200px;
+    height:80px;
+    background:rgba(255, 255, 255, .4);
+    position:absolute;
+    top:-10px;
+    left:-200px;
+    transform:rotate(-45deg);
+    transition:all .2s ease-in-out;  
+  }
+  
+  &:hover:before{
+    margin-left:300%;
+  }
+  
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 1);
+    transform: scale(0.96);
+  }
+}

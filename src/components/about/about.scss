@@ -1,0 +1,54 @@
+@import '../../styles/mixin';
+@import '../../styles/vars';
+
+.about {
+  padding: 120px 0;
+
+  .container {
+    @include flexRule(space-between, center);
+    // max-width: 800px;
+    gap: 50px;
+
+    @include _767-block {
+      flex-direction: column;
+    }
+  }
+
+  // .about__content
+
+  &__content {
+    width: 70%;
+    padding: 40px;
+    background-color: $mainColor;
+    color: #fff;
+    border-radius: 10px;
+
+    @include _767(width, 100%);
+  }
+
+  // .about__title
+
+  &__title {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  // .about__text
+
+  &__text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  // .about__primary-text
+
+  &__primary-text {
+  }
+
+  // .about__img
+
+  &__img {
+    max-width: 350px;
+  }
+}

@@ -1,0 +1,64 @@
+@import "../../styles/mixin";
+@import "../../styles/vars";
+
+.learning {
+  padding: 120px 0;
+  background-color: $mainColor;
+  color: #fff;
+
+  @include _575-block {
+    padding: 80px 0;
+  }
+
+  .container {
+    @include flexRule(space-between, center);
+    gap: 100px;
+
+    @include _991-block {
+      gap: 10px;
+    }
+
+    @include _767-block {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  &__content {
+    width: 55%;
+
+    @include _767(width, 100%);
+    @include _767-block {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  // .learning__title
+
+  &__title {
+    font-size: $allTitleFontSize;
+    line-height: 1.2;
+    font-weight: 500;
+
+    @include _767(font-size, $allTabletFontSize);
+    @include _575(font-size, $allMobileFontSize);
+  }
+
+  // .learning__text
+
+  &__text {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 16px;
+  }
+
+  // .learning__btn
+
+  &__btn {
+    background-color: $primaryColor;
+    @include _991-block {
+      margin: auto;
+    }
+  }
+}

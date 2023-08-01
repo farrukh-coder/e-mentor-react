@@ -1,0 +1,71 @@
+@import "../../styles/mixin";
+@import "../../styles/vars";
+
+.teacher {
+  padding: 120px 0;
+
+
+  &__title {
+    text-align: center;
+    font-size: $allTitleFontSize;
+    margin-bottom: 60px;
+
+    @include _767(font-size, $allTabletFontSize);
+    @include _575-block {
+      margin-bottom: 40px;
+      font-size: $allMobileFontSize;
+    }
+  }
+
+  // .teacher__gallery
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 50px;
+
+    @include _991-block {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include _767-block {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // .teacher__gallery-item
+
+  &__gallery-item {
+    text-align: center;
+  }
+
+  // .teacher__img
+
+  &__img {
+    width: 200px;
+
+    @include _575-block {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // .teacher__name
+
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  // .teacher__position
+
+  &__position {
+    font-weight: 500;
+  }
+}

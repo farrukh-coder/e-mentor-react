@@ -1,0 +1,161 @@
+@import '../../styles/mixin';
+@import '../../styles/vars';
+
+.contact {
+  margin-top: 120px;
+  padding-bottom: 120px;
+
+  @include _767-block {
+    margin-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  // .contact__content
+
+  &__content {
+    @include flexRule(space-between, flex-start);
+    box-shadow: 0px 0px 20px 0px #00000034;
+    border-radius: 10px;
+
+    @include _767-block {
+      flex-direction: column-reverse;
+    }
+  }
+
+  // .contact__form
+
+  &__form {
+    padding: 40px;
+    width: 55%;
+
+    @include _767-block {
+      width: 100%;
+    }
+  }
+
+  // .contact__subtitle
+
+  &__title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+
+  // .contact__field
+
+  &__field {
+  }
+
+  // .contact__input
+
+  &__input {
+    height: 50px;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  // .contact__textarea
+
+  &__textarea {
+    border: 1px solid lightgray;
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+  }
+
+  // .contact__button
+
+  &__button {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    background: $mainColor;
+  }
+
+  // .contact__info
+
+  &__info {
+    align-self: stretch;
+    background-color: $mainColor;
+    color: #fff;
+    padding: 40px;
+    border-radius: 0 10px 10px 0;
+
+    @include _767-block {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  // .contact__p
+
+  &__p {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.modal-form {
+  display: none;
+  // display: flex;
+
+  opacity: 0;  
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  
+  transition: 0.3s all;
+
+  
+  // .modal-form_success
+  &_success {
+
+    .modal-form__inner {
+      background-color: $mainColor;
+    }
+  }
+
+  // .modal-form_error
+
+  &_error {
+
+    .modal-form__inner {
+      background-color: $primaryColor;
+    }
+  }
+
+  // .modal-form__inner
+
+  &__inner {
+    max-width: 500px;
+    height: auto;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+
+    transform: scaleY(0);
+    transition: 0.3s all;
+  }
+}

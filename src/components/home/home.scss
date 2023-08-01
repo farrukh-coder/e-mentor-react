@@ -1,0 +1,165 @@
+@import "../../styles/mixin";
+@import "../../styles/vars";
+
+.home {
+  padding-top: 20px;
+  padding-bottom: 100px;
+  background-color: $mainColor;
+  color: #fff;
+
+  .container {
+    @include flexRule(space-between, center);
+    gap: 40px;
+    @include _767-block {
+      position: relative;
+    }
+
+    @include _575-block {
+      min-height: 500px;
+    }
+  }
+
+  // .home__aside
+  &__aside {
+    @include flexRule(space-between, flex-start, column);
+    height: 100%;
+
+    &_right {
+      margin-top: 0;
+      margin-bottom: auto;
+
+      @include _767-block {
+        right: 0;
+      }
+    }
+
+    @include _767-block {
+      position: absolute;
+      z-index: 3;
+      width: 35%;
+    }
+  }
+
+  // .home__social
+
+  &__social {
+    @include flexRule(flex-start, flex-start, column);
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+
+  // .home__link
+
+  &__link {
+    transition: 0.2s all;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // .home__img
+
+  &__img {
+    @include _575-block {
+      // filter: opacity(0.5);
+    }
+  }
+
+  // .home__main
+
+  &__main {
+    text-align: center;
+    width: 50%;
+
+    @include _767-block {
+      width: 80%;
+      position: relative;
+      margin: auto;
+      z-index: 5;
+    }
+
+    @include _575(margin-top, 50px);
+  }
+
+  // .home__logo
+
+  &__logo {
+    display: block;
+    margin: 0 auto 40px auto;
+    max-width: 250px;
+
+    @include _767-block {
+      display: none;
+    }
+  }
+
+  // .home__title
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: $homeTitleFontSize;
+    line-height: 1.2;
+    font-weight: 500;
+
+    @include _767-block {
+      padding: 20px;
+      border-radius: 0 20px;
+      backdrop-filter: blur(4px);
+      font-size: $homeTabletTitleFontSize;
+      background-color: rgba($color: $primaryColor, $alpha: 0.8);
+    }
+
+    @include _575-block {
+      font-size: $homeMobileTitleFontSize;
+    }
+  }
+
+  // .home__description
+
+  &__description {
+    max-width: 380px;
+    margin: 0 auto 50px auto;
+    font-size: $homeDescroptionFontSize;
+
+    @include _767-block {
+      padding: 20px 10px;
+      background-color: rgba($color: $primaryColor, $alpha: 0.8);
+      border-radius: 20px 0;
+      backdrop-filter: blur(20px);
+    }
+  }
+
+  // .home__btn
+
+  &__btn {
+    background: $primaryColor;
+    margin: auto;
+  }
+
+  // .home__scroll
+
+  &__scroll {
+    position: relative;
+    left: 55px;
+    top: 150px;
+
+    @include flexRule(center, center);
+    gap: 15px;
+    margin-right: 0;
+    margin-left: auto;
+    transform: rotate(90deg);
+    font-size: 14px;
+    font-weight: 400;
+    user-select: none;
+
+    @include _767-block {
+      top: 0px;
+    }
+
+    @include _575-block {
+      width: max-content;
+      left: 30px;
+    }
+  }
+}

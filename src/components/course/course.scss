@@ -1,0 +1,62 @@
+@import '../../styles/mixin';
+@import '../../styles/vars';
+
+.course {
+  padding: 120px 0;
+
+  @include _575-block {
+    padding: 80px 0;
+  }
+
+  // .courses__title
+
+  &__title {
+    margin-bottom: 60px;
+    font-size: $allTitleFontSize;
+    text-align: center;
+    font-weight: 500;
+
+    @include _767(font-size, $allTabletFontSize);
+    @include _575(font-size, $allMobileFontSize);
+  }
+
+  // .courses__inner
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 30px;
+
+    @include _767-block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // .courses__item
+
+  &__item {
+    box-shadow: 5px 5px 30px 0px #6565651f;
+    padding: 20px;
+  }
+
+  // .courses__img
+
+  &__img {
+  }
+
+  // .courses__name
+
+  &__name {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  &__btn {
+    margin: auto;
+    margin-top: 60px;
+    display: block;
+    background-color: $mainColor;
+  }
+}
